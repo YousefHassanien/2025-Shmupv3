@@ -182,5 +182,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveFrequency: 2
   waveWidth: 4
-  speed: 20
   phaseShift: 0
+  speed: 40

@@ -5,9 +5,9 @@ public class ProjectilePhaser : MonoBehaviour
     [Header("Phaser Settings")]
     public float waveFrequency = 2f;
     public float waveWidth = 4f;
-    public float speed = 20f;
     public float phaseShift = 0f;
-
+    public float speed = 40f;
+    
     private float birthTime;
     private float x0; 
 
