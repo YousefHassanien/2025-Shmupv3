@@ -15,7 +15,6 @@ public enum eWeaponType
     spread,     // Multiple shots simultaneously
     phaser,     // [NI] Shots that move in waves
     missile,    // [NI] Homing missiles
-
     laser,      // [NI] Damage over time
     shield      // Raise shieldLevel
 }
@@ -138,6 +137,18 @@ public class Weapon : MonoBehaviour
                 p = MakeProjectile();
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
                 p.vel = p.transform.rotation * vel;
+                break;
+
+            case eWeaponType.phaser:
+                p = MakeProjectile();
+                p.vel = Vector3.zero; 
+                ProjectilePhaser phaser1 = p.GetComponent<ProjectilePhaser>();
+                if (phaser1 != null) phaser1.phaseShift = 0f;
+
+                p = MakeProjectile();
+                p.vel = Vector3.zero; 
+                ProjectilePhaser phaser2 = p.GetComponent<ProjectilePhaser>();
+                if (phaser2 != null) phaser2.phaseShift = Mathf.PI;
                 break;
 
         }
